@@ -5,7 +5,6 @@ import (
         "github.com/gogf/gf/frame/g"
         "github.com/gogf/gf/os/gtime"
         "github.com/gogf/gf/os/gcron"
-
         "github.com/go-gomail/gomail"
         "crypto/tls"
         "strings"
