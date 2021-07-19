@@ -29,7 +29,7 @@ const (
 
 var (
         // 已选号码
-        destNums     = [][]string{{"01", "07", "11", "23", "24", "29", "16"}, {"05", "06", "12", "17", "24", "33", "09"}}
+        destNums     = g.Config().GetArray("lottery.num")
         // 赢奖规则
         winningRules = [][][]int{{{6, 1}}, {{6, 0}}, {{5, 1}}, {{5, 0}, {4, 1}}, {{4, 0}, {3, 1}}, {{2, 1}, {1, 1}, {0, 1}}}
 )
@@ -73,7 +73,9 @@ func checkResult(j *gjson.Json, date string) bool {
         destString := ""
         resString := strings.Join(numSlice, " ")
         msg := ""
-        for _, v := range destNums {
+        for _, val := range destNums {
+                vTmp := val.(string)
+                v := strings.Split(vTmp, ",")
                 destString += strings.Join(v, " ") + "<br>"
                 redBallDest := v[:6]
                 blueBallDest := v[6]
