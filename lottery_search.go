@@ -17,7 +17,7 @@ const (
         getKey            = "ca132f7c54c50fd347147b561f38daa2"
         lotteryId         = "ssq"
         succCode  float64 = 0
-        crontabTime           = "0 20 21 * * TUE,THU,SUN"              // 开奖时间，周二，周四，周日晚21点15分
+        crontabTime       = "0 20 21 * * TUE,THU,SUN"              // 开奖时间，周二，周四，周日晚21点15分
         checkIntvalMin    = 10                                       // 间隔n分钟检查一次结果
         checkMaxTimes     = 5                                        // 最多检查n次，n次都失败则结束
         smtpHost          = "smtp.qq.com"
